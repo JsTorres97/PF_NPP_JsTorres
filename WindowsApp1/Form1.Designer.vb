@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbl_fecha = New System.Windows.Forms.Label()
         Me.lbl_hora = New System.Windows.Forms.Label()
         Me.folio = New System.Windows.Forms.Label()
         Me.lbl_folio = New System.Windows.Forms.Label()
@@ -35,6 +34,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.dtp_fecha = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'Label1
@@ -46,19 +46,10 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Fecha"
         '
-        'lbl_fecha
-        '
-        Me.lbl_fecha.AutoSize = True
-        Me.lbl_fecha.Location = New System.Drawing.Point(56, 9)
-        Me.lbl_fecha.Name = "lbl_fecha"
-        Me.lbl_fecha.Size = New System.Drawing.Size(39, 13)
-        Me.lbl_fecha.TabIndex = 1
-        Me.lbl_fecha.Text = "Label2"
-        '
         'lbl_hora
         '
         Me.lbl_hora.AutoSize = True
-        Me.lbl_hora.Location = New System.Drawing.Point(236, 9)
+        Me.lbl_hora.Location = New System.Drawing.Point(284, 9)
         Me.lbl_hora.Name = "lbl_hora"
         Me.lbl_hora.Size = New System.Drawing.Size(39, 13)
         Me.lbl_hora.TabIndex = 2
@@ -67,7 +58,7 @@ Partial Class Form1
         'folio
         '
         Me.folio.AutoSize = True
-        Me.folio.Location = New System.Drawing.Point(299, 9)
+        Me.folio.Location = New System.Drawing.Point(347, 9)
         Me.folio.Name = "folio"
         Me.folio.Size = New System.Drawing.Size(32, 13)
         Me.folio.TabIndex = 3
@@ -76,7 +67,7 @@ Partial Class Form1
         'lbl_folio
         '
         Me.lbl_folio.AutoSize = True
-        Me.lbl_folio.Location = New System.Drawing.Point(337, 9)
+        Me.lbl_folio.Location = New System.Drawing.Point(385, 9)
         Me.lbl_folio.Name = "lbl_folio"
         Me.lbl_folio.Size = New System.Drawing.Size(39, 13)
         Me.lbl_folio.TabIndex = 4
@@ -85,7 +76,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 33)
+        Me.Label2.Location = New System.Drawing.Point(14, 45)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(93, 13)
         Me.Label2.TabIndex = 5
@@ -93,7 +84,9 @@ Partial Class Form1
         '
         'txt_id
         '
-        Me.txt_id.Location = New System.Drawing.Point(105, 30)
+        Me.txt_id.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txt_id.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txt_id.Location = New System.Drawing.Point(105, 42)
         Me.txt_id.Name = "txt_id"
         Me.txt_id.Size = New System.Drawing.Size(100, 20)
         Me.txt_id.TabIndex = 6
@@ -101,7 +94,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(14, 62)
+        Me.Label3.Location = New System.Drawing.Point(14, 74)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 7
@@ -110,7 +103,7 @@ Partial Class Form1
         'lbl_cliente
         '
         Me.lbl_cliente.AutoSize = True
-        Me.lbl_cliente.Location = New System.Drawing.Point(59, 62)
+        Me.lbl_cliente.Location = New System.Drawing.Point(59, 74)
         Me.lbl_cliente.Name = "lbl_cliente"
         Me.lbl_cliente.Size = New System.Drawing.Size(39, 13)
         Me.lbl_cliente.TabIndex = 8
@@ -118,7 +111,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(420, 33)
+        Me.Button1.Location = New System.Drawing.Point(361, 45)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 9
@@ -131,18 +124,26 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(239, 33)
+        Me.Button2.Location = New System.Drawing.Point(223, 42)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(112, 23)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "Buscar Cliente"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'dtp_fecha
+        '
+        Me.dtp_fecha.Location = New System.Drawing.Point(62, 7)
+        Me.dtp_fecha.Name = "dtp_fecha"
+        Me.dtp_fecha.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_fecha.TabIndex = 11
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.dtp_fecha)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_cliente)
@@ -152,7 +153,6 @@ Partial Class Form1
         Me.Controls.Add(Me.lbl_folio)
         Me.Controls.Add(Me.folio)
         Me.Controls.Add(Me.lbl_hora)
-        Me.Controls.Add(Me.lbl_fecha)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
         Me.Text = "Proyecto Final Jesús Torres"
@@ -162,7 +162,6 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents lbl_fecha As Label
     Friend WithEvents lbl_hora As Label
     Friend WithEvents folio As Label
     Friend WithEvents lbl_folio As Label
@@ -173,4 +172,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Button2 As Button
+    Friend WithEvents dtp_fecha As DateTimePicker
 End Class

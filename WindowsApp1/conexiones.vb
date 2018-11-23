@@ -1,7 +1,7 @@
 ﻿Imports Npgsql
 
 Public Class conexiones
-    Dim strConexion As String = "Server=127.0.0.1;port=5432;Database=a00260271;uid=a00260271;pwd=a00260271"
+    Dim strConexion As String = "Server=lab.anahuac.mx;port=5432;Database=a00260271;uid=a00260271;pwd=a00260271"
 
     Public Function ExisteUsuario(ByVal strNombre As String, ByVal strApellido As String) As Boolean
         Dim conn As New NpgsqlConnection(strConexion)
@@ -28,6 +28,19 @@ Public Class conexiones
         End Try
         Return respuesta
 
+    End Function
+
+    Public Function BuscarClienteParaTexto(ByVal IdCliente As String) As String
+        Dim conn As New NpgsqlConnection(strConexion)
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+                Dim query As String = "SELECT ID, NOMBRE FROM CLIENTES WHERE ID LIKE '" + IdCliente + "'"
+
+            End If
+        Catch ex As Exception
+
+        End Try
     End Function
 
     Public Function BuscarCliente(ByVal IdCliente As String) As String

@@ -2,7 +2,7 @@
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        fecha()
+        FechaYHora()
         lbl_cliente.Text = ""
 
 
@@ -11,19 +11,22 @@ Public Class Form1
 
     End Sub
 
+
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lbl_hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now)
         Timer1.Start()
     End Sub
 
-    Private Sub fecha()
+    Private Sub MostrarClientesTxt()
+
+
+    End Sub
+
+    Private Sub FechaYHora()
         lbl_hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now)
-        Dim meses = DateTime.Now.ToString("MM")
-        Dim diaSemana = Format(Now, "dddd")
-        Dim diaMes = Format(Now, "dd")
-        Dim mes = Thread.CurrentThread.CurrentCulture.DateTimeFormat.MonthNames(meses - 1)
-        Dim año = Format(Now, "yyyy")
-        lbl_fecha.Text = diaSemana + ", " + diaMes + " de " + mes + " del " + año
+        dtp_fecha.CustomFormat = "dddd, dd 'de' MMMM 'de' yyyy"
+        dtp_fecha.MinDate = DateTime.Now.Date
     End Sub
 
 
@@ -39,5 +42,9 @@ Public Class Form1
         Else
             lbl_cliente.Text = nombre
         End If
+    End Sub
+
+    Private Sub dtp_fecha_ValueChanged(sender As Object, e As EventArgs) Handles dtp_fecha.ValueChanged
+
     End Sub
 End Class
